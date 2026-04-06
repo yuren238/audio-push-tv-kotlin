@@ -9,6 +9,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.DeleteOutline
+import androidx.compose.material.icons.filled.Headphones
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
@@ -184,7 +186,7 @@ fun HomeTab(
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Icon(
-                            Icons.headphones,
+                            Icons.Filled.Headphones,
                             contentDescription = null,
                             modifier = Modifier.size(64.dp),
                             tint = MaterialTheme.colorScheme.secondary
@@ -241,7 +243,7 @@ fun HistoryTab(
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Icon(
-                        Icons.history,
+                        Icons.Filled.History,
                         contentDescription = null,
                         modifier = Modifier.size(64.dp),
                         tint = MaterialTheme.colorScheme.secondary
@@ -309,7 +311,7 @@ fun HistoryItem(
 
         IconButton(onClick = onRemove) {
             Icon(
-                Icons.delete_outline,
+                Icons.Filled.DeleteOutline,
                 "Delete",
                 tint = MaterialTheme.colorScheme.secondary
             )
