@@ -75,8 +75,8 @@ fun MiniPlayer(
 
             IconButton(onClick = onPrevious, enabled = state.hasPrevious) {
                 Icon(
-                    SkipPrevious,
-                    "Previous",
+                    imageVector = Icons.Filled.SkipPrevious,
+                    contentDescription = "Previous",
                     tint = if (state.hasPrevious) Color.White else Color.Gray
                 )
             }
@@ -89,16 +89,16 @@ fun MiniPlayer(
                 )
             ) {
                 Icon(
-                    if (state.isPlaying) Pause else PlayArrow,
-                    "Play/Pause",
+                    imageVector = if (state.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
+                    contentDescription = "Play/Pause",
                     tint = Color.Black
                 )
             }
 
             IconButton(onClick = onNext, enabled = state.hasNext) {
                 Icon(
-                    SkipNext,
-                    "Next",
+                    imageVector = Icons.Filled.SkipNext,
+                    contentDescription = "Next",
                     tint = if (state.hasNext) Color.White else Color.Gray
                 )
             }
@@ -189,8 +189,8 @@ fun PlayerControls(
                 modifier = Modifier.size(56.dp)
             ) {
                 Icon(
-                    SkipPrevious,
-                    "Previous",
+                    imageVector = Icons.Filled.SkipPrevious,
+                    contentDescription = "Previous",
                     modifier = Modifier.size(40.dp),
                     tint = if (state.hasPrevious) Color.White else Color.Gray
                 )
@@ -204,8 +204,8 @@ fun PlayerControls(
                 )
             ) {
                 Icon(
-                    if (state.isPlaying) Pause else PlayArrow,
-                    "Play/Pause",
+                    imageVector = if (state.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
+                    contentDescription = "Play/Pause",
                     modifier = Modifier.size(48.dp),
                     tint = Color.Black
                 )
@@ -217,8 +217,8 @@ fun PlayerControls(
                 modifier = Modifier.size(56.dp)
             ) {
                 Icon(
-                    SkipNext,
-                    "Next",
+                    imageVector = Icons.Filled.SkipNext,
+                    contentDescription = "Next",
                     modifier = Modifier.size(40.dp),
                     tint = if (state.hasNext) Color.White else Color.Gray
                 )
