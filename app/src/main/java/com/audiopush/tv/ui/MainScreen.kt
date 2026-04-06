@@ -7,7 +7,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.DeleteOutline
 import androidx.compose.material.icons.filled.Headphones
@@ -47,9 +46,9 @@ fun MainScreen(viewModel: MainViewModel) {
     val serverUrl by viewModel.serverUrl.collectAsState()
 
     val tabs = listOf(
-        TabItem(Icons.Home, "首页"),
-        TabItem(Icons.History, "历史"),
-        TabItem(Icons.Settings, "设置")
+        TabItem(Icons.Filled.Home, "首页"),
+        TabItem(Icons.Filled.History, "历史"),
+        TabItem(Icons.Filled.Settings, "设置")
     )
 
     Scaffold(
