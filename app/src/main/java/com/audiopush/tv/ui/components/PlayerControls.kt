@@ -4,13 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Pause
-import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.SkipNext
-import androidx.compose.material.icons.filled.SkipPrevious
-import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -40,7 +33,6 @@ fun MiniPlayer(
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.surface)
     ) {
-        // Progress bar
         LinearProgressIndicator(
             progress = { state.progress },
             modifier = Modifier.fillMaxWidth().height(3.dp),
@@ -52,7 +44,6 @@ fun MiniPlayer(
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Cover
             AsyncImage(
                 model = state.currentEpisode.coverUrl,
                 contentDescription = "Cover",
@@ -62,7 +53,6 @@ fun MiniPlayer(
 
             Spacer(modifier = Modifier.width(12.dp))
 
-            // Info
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = state.currentEpisode.title,
@@ -80,9 +70,12 @@ fun MiniPlayer(
                 )
             }
 
-            // Controls
             IconButton(onClick = onPrevious, enabled = state.hasPrevious) {
-                Icon(Icons.SkipPrevious, "Previous", tint = if (state.hasPrevious) Color.White else Color.Gray)
+                Icon(
+                    androidx.compose.material.icons.Icons.Default.SkipPrevious,
+                    "Previous",
+                    tint = if (state.hasPrevious) Color.White else Color.Gray
+                )
             }
 
             FilledIconButton(
@@ -93,14 +86,21 @@ fun MiniPlayer(
                 )
             ) {
                 Icon(
-                    if (state.isPlaying) Icons.Pause else Icons.PlayArrow,
+                    if (state.isPlaying) 
+                        androidx.compose.material.icons.Icons.Default.Pause 
+                    else 
+                        androidx.compose.material.icons.Icons.Default.PlayArrow,
                     "Play/Pause",
                     tint = Color.Black
                 )
             }
 
             IconButton(onClick = onNext, enabled = state.hasNext) {
-                Icon(Icons.SkipNext, "Next", tint = if (state.hasNext) Color.White else Color.Gray)
+                Icon(
+                    androidx.compose.material.icons.Icons.Default.SkipNext,
+                    "Next",
+                    tint = if (state.hasNext) Color.White else Color.Gray
+                )
             }
         }
     }
@@ -121,7 +121,6 @@ fun PlayerControls(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Cover
         AsyncImage(
             model = state.currentEpisode.coverUrl,
             contentDescription = "Cover",
@@ -131,7 +130,6 @@ fun PlayerControls(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Title & Podcast
         Text(
             text = state.currentEpisode.title,
             fontWeight = FontWeight.Bold,
@@ -150,7 +148,6 @@ fun PlayerControls(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Progress
         var sliderPosition by remember(state.progress) { mutableFloatStateOf(state.progress) }
 
         Slider(
@@ -164,7 +161,6 @@ fun PlayerControls(
             )
         )
 
-        // Time
         Row(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween
@@ -183,7 +179,6 @@ fun PlayerControls(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Controls
         Row(
             horizontalArrangement = Arrangement.spacedBy(24.dp),
             verticalAlignment = Alignment.CenterVertically
@@ -194,7 +189,7 @@ fun PlayerControls(
                 modifier = Modifier.size(56.dp)
             ) {
                 Icon(
-                    Icons.SkipPrevious,
+                    androidx.compose.material.icons.Icons.Default.SkipPrevious,
                     "Previous",
                     modifier = Modifier.size(40.dp),
                     tint = if (state.hasPrevious) Color.White else Color.Gray
@@ -209,7 +204,10 @@ fun PlayerControls(
                 )
             ) {
                 Icon(
-                    if (state.isPlaying) Icons.Pause else Icons.PlayArrow,
+                    if (state.isPlaying) 
+                        androidx.compose.material.icons.Icons.Default.Pause 
+                    else 
+                        androidx.compose.material.icons.Icons.Default.PlayArrow,
                     "Play/Pause",
                     modifier = Modifier.size(48.dp),
                     tint = Color.Black
@@ -222,7 +220,7 @@ fun PlayerControls(
                 modifier = Modifier.size(56.dp)
             ) {
                 Icon(
-                    Icons.SkipNext,
+                    androidx.compose.material.icons.Icons.Default.SkipNext,
                     "Next",
                     modifier = Modifier.size(40.dp),
                     tint = if (state.hasNext) Color.White else Color.Gray
