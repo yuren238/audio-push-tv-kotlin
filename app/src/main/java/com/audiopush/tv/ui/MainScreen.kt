@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.audiopush.tv.PlayerState
-import com.audiopush.tv.PlayerState as State
 import com.audiopush.tv.ui.components.*
 
 data class TabItem(
