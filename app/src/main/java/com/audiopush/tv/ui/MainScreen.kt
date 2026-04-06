@@ -42,6 +42,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.audiopush.tv.MainViewModel
 import com.audiopush.tv.PlayerState
 import com.audiopush.tv.ui.components.*
 
@@ -117,7 +118,7 @@ fun MainScreen(viewModel: MainViewModel) {
             }
 
             // Error snackbar
-            error?.let { errorMsg ->
+            if (error != null) {
                 Snackbar(
                     modifier = Modifier
                         .align(Alignment.BottomCenter)
@@ -128,7 +129,7 @@ fun MainScreen(viewModel: MainViewModel) {
                         }
                     }
                 ) {
-                    Text(errorMsg)
+                    Text(error!!)
                 }
             }
 
