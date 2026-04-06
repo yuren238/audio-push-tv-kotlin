@@ -1,8 +1,6 @@
 package com.audiopush.tv.ui.components
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -17,6 +15,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.audiopush.tv.PlayerState
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Pause
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.SkipNext
+import androidx.compose.material.icons.filled.SkipPrevious
 
 @Composable
 fun MiniPlayer(
@@ -72,7 +75,7 @@ fun MiniPlayer(
 
             IconButton(onClick = onPrevious, enabled = state.hasPrevious) {
                 Icon(
-                    androidx.compose.material.icons.Icons.Default.SkipPrevious,
+                    SkipPrevious,
                     "Previous",
                     tint = if (state.hasPrevious) Color.White else Color.Gray
                 )
@@ -86,10 +89,7 @@ fun MiniPlayer(
                 )
             ) {
                 Icon(
-                    if (state.isPlaying) 
-                        androidx.compose.material.icons.Icons.Default.Pause 
-                    else 
-                        androidx.compose.material.icons.Icons.Default.PlayArrow,
+                    if (state.isPlaying) Pause else PlayArrow,
                     "Play/Pause",
                     tint = Color.Black
                 )
@@ -97,7 +97,7 @@ fun MiniPlayer(
 
             IconButton(onClick = onNext, enabled = state.hasNext) {
                 Icon(
-                    androidx.compose.material.icons.Icons.Default.SkipNext,
+                    SkipNext,
                     "Next",
                     tint = if (state.hasNext) Color.White else Color.Gray
                 )
@@ -189,7 +189,7 @@ fun PlayerControls(
                 modifier = Modifier.size(56.dp)
             ) {
                 Icon(
-                    androidx.compose.material.icons.Icons.Default.SkipPrevious,
+                    SkipPrevious,
                     "Previous",
                     modifier = Modifier.size(40.dp),
                     tint = if (state.hasPrevious) Color.White else Color.Gray
@@ -204,10 +204,7 @@ fun PlayerControls(
                 )
             ) {
                 Icon(
-                    if (state.isPlaying) 
-                        androidx.compose.material.icons.Icons.Default.Pause 
-                    else 
-                        androidx.compose.material.icons.Icons.Default.PlayArrow,
+                    if (state.isPlaying) Pause else PlayArrow,
                     "Play/Pause",
                     modifier = Modifier.size(48.dp),
                     tint = Color.Black
@@ -220,7 +217,7 @@ fun PlayerControls(
                 modifier = Modifier.size(56.dp)
             ) {
                 Icon(
-                    androidx.compose.material.icons.Icons.Default.SkipNext,
+                    SkipNext,
                     "Next",
                     modifier = Modifier.size(40.dp),
                     tint = if (state.hasNext) Color.White else Color.Gray
