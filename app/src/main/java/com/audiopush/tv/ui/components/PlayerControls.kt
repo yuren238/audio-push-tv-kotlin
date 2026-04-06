@@ -1,5 +1,6 @@
 package com.audiopush.tv.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -37,7 +38,7 @@ fun MiniPlayer(
             .background(MaterialTheme.colorScheme.surface)
     ) {
         LinearProgressIndicator(
-            progress = { state.progress },
+            progress = state.progress,
             modifier = Modifier.fillMaxWidth().height(3.dp),
             color = MaterialTheme.colorScheme.primary,
             trackColor = MaterialTheme.colorScheme.surfaceVariant,
